@@ -7,13 +7,15 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
 # Download NLTK resources if not already downloaded
+# Download NLTK resources if not already present
 try:
     nltk.data.find('corpora/stopwords')
-except nltk.downloader.DownloadError:
+except LookupError:
     nltk.download('stopwords')
+
 try:
     nltk.data.find('tokenizers/punkt')
-except nltk.downloader.DownloadError:
+except LookupError:
     nltk.download('punkt')
 try:
     nltk.data.find('corpora/wordnet')
