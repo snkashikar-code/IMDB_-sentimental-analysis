@@ -19,7 +19,7 @@ except LookupError:
     nltk.download('punkt')
 try:
     nltk.data.find('corpora/wordnet')
-except nltk.downloader.DownloadError:
+except LookupError:
     nltk.download('wordnet')
 
 stop_words = set(stopwords.words('english'))
